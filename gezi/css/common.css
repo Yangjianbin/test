@@ -115,12 +115,12 @@ footer .links .link-follow a.weibo {
     background-image: url(../images/weibo_follow.png)
 }
 footer .links .link-item dt {
-    color: rgba(0,0,0,.54);
+    color: rgba(255,255,255,.54);
     font-size: 18px;
     padding-bottom: 12px;
 }
 footer .links .link-item dd a {
-    color: rgba(0,0,0,.32);
+    color: rgba(255,255,255,.32);
     font-size: 14px;
 }
 footer .copyright {
