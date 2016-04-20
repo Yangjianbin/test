@@ -119,6 +119,10 @@ footer .links .link-item dt {
     font-size: 18px;
     padding-bottom: 12px;
 }
+footer .links .link-item dt a{
+	color: rgba(255,255,255,.54);
+    font-size: 18px;
+}
 footer .links .link-item dd a {
     color: rgba(255,255,255,.32);
     font-size: 14px;
