@@ -36,6 +36,7 @@ $(function() {
         // if(!$this.next('.submenu').is(':hidden')) return;
         // $this.addClass('active').next('.submenu').slideDown().closest('.menu').children('li').children('a').not($this).removeClass('active');
     });
+    var isScroll=false;
     $('.submenu a').click(function(e) {
         e.preventDefault();
         var $this = $(this),
@@ -45,13 +46,27 @@ $(function() {
             $this.addClass('active');
             var href = $this.prop('href');
             if (/(#\w+)/g.test(href) && (target = RegExp.$1) && target != '') {
-                var offsetTop = $(target).offset().top-70;
-				console.log(offsetTop)
+                var offsetTop = $(target).offset().top-134;
+				isScroll=true;
                 $("body,html").animate({
                     scrollTop: offsetTop
-                }, 300);
+                }, 300,function(){
+                    isScroll=false;
+                });
+            }
+        }else{
+            var href = $this.prop('href');
+            if (/(#\w+)/g.test(href) && (target = RegExp.$1) && target != '') {
+                var offsetTop = $(target).offset().top-134;
+                isScroll=true;
+                $("body,html").animate({
+                    scrollTop: offsetTop
+                }, 300,function(){
+                    isScroll=false;
+                });
             }
         }
+        return false;
     })
     $('footer a').click(function(e){
 
@@ -64,7 +79,7 @@ $(function() {
                     if(/(#\w+)/g.test($(this).prop('href'))){
                         var t = RegExp.$1;
                         $('.menu>li>a.active+.submenu li a[href='+t+']').click();
-                    }     
+                    }
                 }
             }
         }
@@ -81,17 +96,19 @@ $(function() {
     }
     parseLink();
 	$(document).scroll(function(){
-		
-		var pTop = $(this).scrollTop()+64;
+		if(isScroll) return ;
+		var pTop = $(this).scrollTop()+140;
 		var els = $('div[data-content]').filter(function(){
 			var top = $(this).offset().top;
 			//console.log(top,pTop);
 			if(top <= pTop) return true;
 		});
 		if(els.length>0){
-			$('.menu>li>a.active+.submenu li a').removeClass('active').filter(function(){
-				//if($(this).prop('href').indexOf('#'+els.last().prop('id'))>-1)
-			//	$(this).addClass('active')
+			$('.menu>li>a.active+.submenu li a').filter(function(){
+				if($(this).prop('href').indexOf('#'+els.last().prop('id'))>-1 && !$(this).is('.active')){
+                    $('.menu>li>a.active+.submenu li a').removeClass('active');
+                    $(this).addClass('active');
+                }
 			})
 		}
 	})
