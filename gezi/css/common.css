@@ -5,7 +5,9 @@ body {
 .container {
     width: 900px;
     margin: auto;
-}/*header*/
+    max-width: 100%;
+}
+/*header*/
 
 header{
 	background: #5a5a5a;
@@ -130,5 +132,5 @@ footer .links .link-item dd a {
 footer .copyright {
     margin-top: 30px;
     font-size: 10px;
-    color:rgba(255,255,255,.54);
+    color: rgba(255,255,255,.54);
 }
