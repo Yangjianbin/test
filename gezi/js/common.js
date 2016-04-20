@@ -90,8 +90,8 @@ $(function() {
 		});
 		if(els.length>0){
 			$('.menu>li>a.active+.submenu li a').removeClass('active').filter(function(){
-				if($(this).prop('href').indexOf('#'+els.last().prop('id'))>-1)
-				$(this).addClass('active')
+				//if($(this).prop('href').indexOf('#'+els.last().prop('id'))>-1)
+			//	$(this).addClass('active')
 			})
 		}
 	})
