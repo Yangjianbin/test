@@ -79,6 +79,11 @@
             bottom: 50px;
             left: 50%;
             transform: translateX(-50%);
+            animation-name: myfirst ;
+            animation-duration:2s;
+            animation-iteration-count:infinite;
+            animation-direction:alternate;
+
         }
         .section2{
             background: #fff;
@@ -213,17 +218,19 @@
             margin-bottom: 64px;
         }
         .shop-detail{
-            width: 1146px;
+            /*width: 1146px;*/
             margin: auto;
             background-color: white;
         }
         .shop-detail p{
-            width:304px;
+            /*width:304px;*/
+            width:31%;
             padding: 20px 15px;
             box-sizing: border-box;
             line-height: 28px;
             text-align: left;
-            font-size:18px;
+            /*font-size:16px;*/
+            font-size: 1.1em;
             position: relative;
             color:rgba(0,0,0,.54);
 
@@ -332,6 +339,45 @@
             padding-right: 20px;
         }
 
+        /* @media screen and (max-width:450px){
+            .shop{
+                width:auto !important;
+            }
+            .shop .shop-title,.shop .shop-desc{
+                text-align: center !important;
+            }
+            .shop .shop-detail>img{
+                width:100% !important;
+            }
+            .shop .shop-detail>p{
+                width:100% !important;
+            }
+            .shop .shop-detail>p a{
+                right: inherit !important;
+                bottom: inherit !important;
+            }
+            .shop .shop-detail:last-child img:first-child{
+                width:27.2% !important;
+            }
+            .shop .shop-detail:last-child img:last-child{
+                width:72.7% !important;
+            }
+        } */
+         .shop .shop-detail:last-child img:first-child{
+                width:27.2% !important;
+            }
+            .shop .shop-detail:last-child img:last-child{
+                width:72.7% !important;
+            }
+
+
+
+    @-webkit-keyframes myfirst /* Safari 和 Chrome */
+    {
+        from {bottom: 50px;}
+        to {bottom: 80px;}
+    }
+
     </style>
 </head>
 <body>
@@ -384,7 +430,7 @@
                 <h1 class="shop-title">宾至如归的线下体验店</h1>
                 <p class="shop-desc">让消费者亲身体验产品的零售终端实体</p>
                 <div class="shop-detail clearfix">
-                    <img style="width:" class="fl" src="../images/shop_1.png" alt="">
+                    <img style="width:68%;" class="fl" src="../images/shop_1.png" alt="">
                     <p class="fr">
                     <img style="padding-right:10px;" src="../images/p_start.png" alt="">
                         线下体验店不仅是向顾客展示新潮产品的站点，更是云格子铺团队的诚意体现。对于所有云格子铺官方商城自营商品，线下体验店都将提供相应的售后服务。
@@ -504,7 +550,29 @@
 <script src="../js/move.js"></script>
 <script src="../js/common.js"></script>
 <script>
+function IsPC()  
+{  
+           var userAgentInfo = navigator.userAgent;  
+           var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
+           var flag = true;  
+           for (var v = 0; v < Agents.length; v++) {  
+               if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
+           }  
+           return flag;  
+}            
+
      $(function(){
+        if($(window).width()<=980){
+            $('.shop-detail p').css('font-size','90%');
+        }
+        if(IsPC() && $(window).width()<=1320){
+
+            $('.section1 .icon_logo').css({'transform':'scale(.6)','margin-top':'-100px'});
+            $('.section1 .brand').css({'transform':'scale(.6)','margin-top':'-80px'});
+            $('.section1 .desc').css('margin-top','1px');
+            $('.section1 .download_btn').css({'transform':'scale(.6)','margin-top':'20px'})
+               
+        }
         var time1=null;
         var animFlag = true;
         function autoClick(){
@@ -551,11 +619,11 @@
         $('#fullpage').fullpage({
             afterLoad:function(v,idx){
                 if(idx == 1){
-                    time1 = setInterval(function(){
-                        $('.slide_down').stop().animate({bottom:'80px'},490,function(){
-                            $('.slide_down').stop().animate({bottom:'50px'},490);
-                        });
-                    },1000);
+                    // time1 = setInterval(function(){
+                    //     $('.slide_down').stop().animate({bottom:'80px'},490,function(){
+                    //         $('.slide_down').stop().animate({bottom:'50px'},490);
+                    //     });
+                    // },100);
                     
                 }else if(idx ==2){
                     move('.service-cons .service-con h2').set('top','38%').end();
@@ -591,10 +659,10 @@
             // css3:true,
             anchors:['section1','section2','section3','section4','section5'],
             scrollBar:true,
-             resize : true,          
+            resize : true,          
             onLeave:function(index,nextIndex,direction){
                 if(index==1){
-                    clearInterval(time1);
+                    // clearInterval(time1);
                 }else if(index==2){
                     move('.service-cons .service-con h2').set('top','33%').end();
                     move('.service-cons .service-con h3').set('top','66%').end();

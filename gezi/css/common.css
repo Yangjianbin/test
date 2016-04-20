@@ -112,6 +112,7 @@ footer .links .link-follow .qrcode_show {
     transform: translateX(-50%);
     margin-left: 4px;
     display: none;
+    max-width: none;
 }
 footer .links .link-follow a.weibo {
     background-image: url(../images/weibo_follow.png)
