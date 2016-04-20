@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云格子铺</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+      
+
+        section{
+            padding-top: 134px;
+        }
+
+        nav{
+            float: left;
+            width:170px;
+			position:fixed;
+        }
+        
+        .article{
+            float: right;
+            width:730px;
+            text-align: left;
+            margin-bottom: 100px;
+
+        }
+        
+        .article h2{
+            margin-top: 30px;
+            font-size: 24px;
+            line-height: 1em;
+            color: rgba(0,0,0,.87);
+            font-weight: normal;
+        }
+        .article h2:first-child{
+            margin-top: 0px;
+        }
+        .article p{
+            line-height: 40px;
+            margin-top: 20px;
+            font-size: 18px;
+            color:rgba(0,0,0,.64);
+			margin-bottom:30px;
+
+        }
+        
+        .map{
+            background: #fff;
+            margin-top: 40px;
+            padding:15px;
+        }
+        .shoplist{
+            float: left;
+            width:240px;
+        }
+        .shoplist .shopline{
+            height: 2px;
+            width:238px;
+            background: #fafafa;
+            margin:auto;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .shoplist .shopitem{
+            cursor: pointer;
+			padding:12px;
+            /*height: 134px;*/
+        }
+        .shoplist .shopitem:hover,.shoplist .shopitem.active{
+            background: #fafafa;
+        }
+        .shoplist h2{
+            font-size: 18px;
+        }
+        .shoplist h2 span{
+            font-size: 12px;
+        }
+        .shoplist p{
+            font-size: 12px;
+
+            line-height: 22px;
+        }
+        .shoplist p.icon{
+            padding-left: 30px;
+            background-repeat: no-repeat;
+            background-size: 20px 20px;
+            background-position: left 1px;
+			margin-top:10px;
+			margin-bottom:10px;
+        }
+        .shoplist p.icon-loc{
+            
+            background-image: url(../images/loc.png);
+            
+
+        }
+        .shoplist p.icon-tel{
+            background-image: url(../images/tel.png);          
+        }
+        .shoplist p img{
+            vertical-align: text-bottom;
+        }
+        .bdmap{
+            width: 420px;
+            height: 264px;
+            float: right;
+        }
+        .anchorBL{  
+           display:none;  
+       }  
+
+
+    </style>
+</head>
+<body>
+    <header >
+        <div class="container">
+            <a class="fl" href="./index.html">
+            
+            </a>
+        </div>
+        
+    </header>
+    <section class="container clearfix">
+        <nav class="clearfix">
+            <ul class="menu">
+                <li><a class="" href="./about.html">关于我们</a>
+                    <ul class="submenu">
+                        <li><a class="" href="#">造风</a></li>
+                        <li><a href="#">云格子铺</a></li>
+                        <li><a href="#">团队介绍</a></li>
+                    </ul>
+                </li>
+                <li><a class="" href="./join.html">加入我们</a>
+                    <ul class="submenu">
+                        <li><a class="" href="#">技术</a></li>
+                        <li><a href="#">运营</a></li>
+                        <li><a href="#">其他</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="active">联系我们</a>
+                    <ul class="submenu">
+                        <li><a class="" href="#hrmail">招聘邮箱</a></li>
+                        <li><a href="#conmail">商务合作邮箱</a></li>
+                        <li><a href="#o2omail">线下体验店</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="article">
+            <div id="hrmail" data-content="hrmail">
+                
+            
+            <h2>
+                招聘邮箱
+            </h2>
+            <p>
+                hr@zaofengchina.com
+            </p>
+            </div>
+
+            <div id="conmail" data-content="conmail">
+            <h2>
+                商务合作邮箱
+            </h2>
+            <p>
+                bd@zaofengchina.com
+            </p>
+            </div>
+            <div id="o2omail"  data-content="o2omail">
+                
+            
+            <h2>
+                云格子铺线下体验店地址
+            </h2>
+
+            <div class="map clearfix">
+                <div class="shoplist">
+                    <div class="shopitem">
+                        <h2>紫金港店<span>(8:00-22:00)</span></h2>
+                        <p class="icon icon-loc">
+                            浙江省杭州市西湖区三墩望月公寓樱花苑二幢云格子铺店
+                        </p>
+                        <p class="icon icon-tel">
+                            +86 13116771227
+                        </p>
+                    </div>
+                    <span class="shopline"></span>
+                    <div class="shopitem">
+                        <h2>玉泉店<span>(8:00-22:00)</span></h2>
+                        <p class="icon icon-loc">
+                            
+                            浙江大学玉泉校区知泉路求是便利街云格子铺店（近北门）
+                        </p>
+                        <p class="icon icon-tel"> 
+                            +86 18768011211
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="bdmap" id="bdmap">
+                    
+                </div>
+            </div>
+            </div>
+           
+        
+            
+       </div>
+    </section>
+    <footer class="">
+                <div class="container">
+                    <div class="links clearfix">
+                <dl class="link-item">
+                    <dt>关于我们</dt>
+                    <dd><a href="./about.html#zaofeng">造风</a></dd>
+                    <dd><a href="./about.html#yungezipu">云格子铺</a></dd>
+                </dl>
+                <dl class="link-item">
+                    <dt>加入我们</dt>
+                    <dd><a href="./join.html#tech">技术</a></dd>
+                    <dd><a href="./join.html#pro">产品</a></dd>
+                    <dd><a href="./join.html#opera">运营</a></dd>
+                    <dd><a href="./join.html#mark">市场与营销</a></dd>
+                       
+                 
+                </dl>
+                <dl class="link-item">
+                    <dt>联系我们</dt>
+                    <dd><a href="./contact.html#hrmail">招聘邮箱</a></dd>
+                    <dd><a href="./contact.html#conmail">商务合作邮箱</a></dd>
+                    <dd><a href="./contact.html#o2omail">线下体验店</a></dd>
+                </dl>
+               
+                <dl class="link-item link-follow">
+                    <dt>关注我们</dt>
+                    <dd>
+                         <a class="weixin" href="javascript:;">
+                            <img class="qrcode_show" src="../images/qrcode_show.png" alt="云格子铺" />
+                        </a>
+                        <a class="weibo" target="_blank" href="http://weibo.com/yungezipu?refer_flag=1001030101"></a>
+                    </dd>
+                   
+                </dl>
+            </div>
+                    <p class="copyright">
+                        &copy;2014-2016&nbsp;&nbsp;Uboxs.com&nbsp;&nbsp;杭州造风电子商务有限公司 <br>
+                        浙ICP备 15002752号-2
+                    </p>
+                </div>
+
+                
+            </footer>
+</body>
+
+<script src="http://api.map.baidu.com/api?v=2.0&ak=QVYxRW2ZxRxLGHycLEcZUTtNfBK8rvwp"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+<script src="../js/common.js"></script>
+<script>
+    $(function(){
+        var map = new BMap.Map("bdmap");       
+        var point = new BMap.Point(120.109992,30.301004);  
+        map.centerAndZoom(point, 13);
+        var point1 = new BMap.Point(120.096962,30.315884)  
+        ,marker1 = new BMap.Marker(point1)
+        ,point2 = new BMap.Point(120.130209,30.274364)
+        ,marker2 = new BMap.Marker(point2);
+        map.addOverlay(marker1);
+        map.addOverlay(marker2);  
+		$('.shopitem').click(function(){
+			if(!$(this).is('.active')){
+				$(this).siblings().removeClass('active').end().addClass('active');
+				var idx = $(this).index();
+				setTimeout(function(){
+					map.panTo(idx?point2:point1);    
+				}, 100);
+			}
+			
+		});
+        
+    })
+
+</script>
+
+</html>

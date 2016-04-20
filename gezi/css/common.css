@@ -1,0 +1,129 @@
+body {
+    background-color: #fafafa;
+    font-family: '微软雅黑';
+}
+.container {
+    width: 900px;
+    margin: auto;
+}/*header*/
+
+header{
+	background: #5a5a5a;
+	height: 70px;
+	position:fixed;
+	margin:auto;
+	width:100%;
+	z-index:10;
+}
+header a{
+	height: 40px;
+	width: 182px;
+	line-height: 70px;
+	background-image: url(../images/logo.png);
+	background-size: auto 40px;
+	background-repeat: no-repeat;
+	transform:translateY(15px);
+}
+
+
+
+/*menu*/
+
+.menu {
+    text-align: left;
+    padding-right: 60px;
+    top: 0px;
+    transform: translateZ(0);
+}
+.menu>li>a {
+    border-left: 4px solid rgba(0, 0, 0, .32);
+    font-size: 18px;
+    padding-left: 8px;
+    margin-left: 6px;
+    margin-bottom: 22px;
+    display: block;
+    color: rgba(0, 0, 0, .64);
+    line-height: 1em;
+    /*position: relative;*/
+}
+.menu>li>a.active {
+    color: #22b98e;
+    border-left: 4px solid #22b98e;
+}
+.menu>li ul.submenu {
+    margin-left: 18px;
+    margin-bottom: 22px;
+    display: none;
+}
+.menu>li>a.active+ul.submenu {
+    display: block;
+}
+.menu>li ul.submenu li a {
+    color: rgba(0, 0, 0, .32);
+}
+.menu>li ul.submenu li a.active, .menu>li ul.submenu li a:hover {
+    color: rgba(0, 0, 0, .87);
+}
+.menu>li ul.submenu li {
+    line-height: 28px;
+}
+.menu>li ul.submenu li:first-child {
+    margin-top: -5px;
+}
+.menu>li ul.submenu li:last-child {
+    margin-bottom: -5px;
+}
+/*footer*/
+
+footer {
+    background-color: #5a5a5a;
+    padding: 40px;
+    color: #bfbfbf;
+}
+footer .links {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+footer .links .link-item {
+    width: 20%;
+    float: left;
+    color: #bfbfbf;
+    text-align: left;
+}
+footer .links .link-follow {
+    float: right;
+}
+footer .links .link-follow a {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    padding: 10px;
+    background-repeat: no-repeat;
+}
+footer .links .link-follow a.weixin {
+    background-image: url(../images/weixin_follow.png);
+    position: relative;
+}
+footer .links .link-follow .qrcode_show {
+    position: absolute;
+    top: -183px;
+    transform: translateX(-50%);
+    margin-left: 4px;
+    display: none;
+}
+footer .links .link-follow a.weibo {
+    background-image: url(../images/weibo_follow.png)
+}
+footer .links .link-item dt {
+    color: #dfdfdf;
+    font-size: 18px;
+    padding-bottom: 12px;
+}
+footer .links .link-item dd a {
+    color: #bfbfbf;
+    font-size: 14px;
+}
+footer .copyright {
+    margin-top: 30px;
+    font-size: 10px;
+}

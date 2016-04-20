@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云格子铺</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link href="../css/jquery.fullPage.css" rel="stylesheet">
+    <style>
+        body{
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
+        section{
+            text-align:center;
+        }
+        .section1{
+            background-image: url(../images/index_bg.png);
+            background-size:100% auto;
+            background-repeat:no-repeat;
+           
+        }
+     
+        .section1 .icon_logo{
+            
+        }
+        .section1 .brand{
+           
+            font-weight: bold;
+            font-size: 58px;
+            color: white;
+            letter-spacing: .5em;
+            text-indent: .5em;
+            font-family: '微软雅黑';
+        }
+        .section1 .desc{
+            margin-top:40px;
+            letter-spacing: 24px;
+            color: #eeeeee;
+            font-size: 30px;
+        }
+        .section1 .download_btn{
+            margin-top: 90px;
+            border: 2px solid #22b98e;
+            font-size: 40px;
+            color: #22b98e;
+            padding: 15px 25px;
+            background: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .section1 .download_detail{
+            color: rgba(255,255,255,.48);
+            font-size: 16px;
+            line-height: 32px;
+            margin-top:8px;
+        }
+        .section1 .slide_down{
+            display: block;
+            height: 27px;
+            width:50px;
+            background-image: url(../images/slide.png);
+            position: absolute;
+            bottom: 64px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .section2{
+            background: #fff;
+        }
+        .section2 .services{
+            padding-top: 64px;
+            /*width:46%;*/
+            width:880px;
+            margin: auto;
+        }
+        .services .service-item{
+            width:112px;
+            height: 140px;
+            display: inline-block;
+            text-align: center;
+            color:rgba(0,0,0,.54);
+
+        }
+        .services h2{
+            font-size: 30px;
+            font-weight: normal;
+            text-align: center;
+            line-height: 1em;
+            margin-top: 14px;
+            margin-bottom: 14px;     
+
+        }
+        .services p{
+            font-size: 15px;
+        }
+        .services .service-item .icon-service{
+            height: 112px;
+            width: 112px;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: rgba(0,0,0,.24);
+            border-radius: 50%;
+        }
+
+        .services .service-item .icon-service:hover,.services .service-item .icon-service.active{
+            background-color: #22b98e;
+        }
+        .services .service-item .icon-service-sale{
+            background-image: url(../images/sale.png);
+
+        }
+        .services .service-item .icon-service-buy{
+            background-image: url(../images/buy.png);
+            
+        }
+        .services .service-item .icon-service-comty{
+            background-image: url(../images/comty.png);
+            
+        }
+        .service-cons{
+            padding-top: 70px;
+            /*width: 46%;
+            */
+            width:880px;
+            margin: auto;
+            height: 450px;
+            /*background: red;*/
+        }
+        .service-cons .service-con{
+            position: relative;
+        }
+        .service-cons .service-con h2{
+            position: absolute;
+            top:33%;
+            color: rgba(0,0,0,.73);
+            font-size: 38px;
+            font-weight: normal;
+        }
+        .service-cons .service-con h3{
+            position: absolute;
+            top:60%;
+            text-align:left;
+
+            font-size: 24px;
+            color:rgba(0,0,0,.54);
+
+        }
+        .service-cons .gifs{
+            margin-right:-60px;
+            height: 586px;
+            width: 309px;
+            background-image: url(../images/phone_shadow.png) ,url(../images/phone.png) ;
+            background-size: auto 100% , auto 92%;
+            background-position: center center , 10px 12px;
+            background-repeat: no-repeat;
+            float: right;
+            
+        }
+
+        .service-cons .gifs img{
+            width: 240px;
+            margin-left: -20px;
+            margin-top: 65px;
+        
+        }
+
+        .section3{
+            /*background:pink;*/
+        }
+        .shop{
+            /*padding-top: 60px;*/
+            margin-left: auto;
+            margin-right: auto;
+            width:1146px;
+        }
+        .shop-title{
+            font-size:38px;
+            font-weight: normal;
+            color:rgba(0,0,0,.72);
+            text-align: right;
+            width: 1146px;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+
+        .shop-desc{
+            color:rgba(0,0,0,.54);
+            text-align: right;
+            width: 1146px;
+            margin: auto;
+            font-size:24px;
+            margin-bottom: 64px;
+        }
+        .shop-detail{
+            width: 1146px
+            margin: auto;
+            background-color: white;
+        }
+        .shop-detail p{
+            width:304px;
+            padding: 20px 15px;
+            box-sizing: border-box;
+            line-height: 28px;
+            text-align: left;
+            font-size:18px;
+            position: relative;
+            color:rgba(0,0,0,.54);
+
+        }
+        .shop-detail p a{
+            color: #22b98e;
+            bottom: -18px;
+            right:16px;
+            position: absolute;
+        }
+        .shop-detail img{
+            /*width:80%;*/
+
+        }
+        .section4{
+            background: white;
+        }
+
+        .spec{
+            height: 400px;
+            /*background: red;*/
+            /*padding:40px;*/
+            position: relative;
+            width: 1000px;
+            margin:auto;
+            opacity:.0;
+            margin-top:64px;
+        }
+
+        .spec img{
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            left:0px;
+            
+        }
+        .spec .text{
+            top:35%;
+            right:0px;
+            position: absolute;
+            text-align: left;
+        }
+        .spec .text .title{
+            font-size: 38px;
+            color: rgba(0,0,0,.72);
+        }
+        .spec .text .desc{ 
+            font-size: 24px;
+            color: rgba(0,0,0,.52);
+            margin-top:12px;
+        }
+        .spec.value .text{
+            left:0px;
+            right: inherit;
+        }
+        .spec.value img{
+            right:0px;
+            left: inherit;
+        }
+        
+        
+        .section5{
+            background-color:white;
+        }
+        .download{
+            width:500px;
+            margin:auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .download a{
+            border:2px solid #33b98e;
+            padding:20px;
+            display: block;
+            float:left;
+            background-repeat: no-repeat;
+            font-size: 20px;
+            color:#22b98e;
+            margin:20px;
+        }
+        .download a.download_qrcode{
+            width:230px;
+            height: 230px;
+            background-image: url(../images/download_qrcode.png);
+            background-size: 100% 100%;
+        }
+        .download a.ios_download{
+            background-image: url(../images/ios.png);
+            background-size: 40px 40px;
+            background-position: 10px center;
+            padding-left: 60px;
+            padding-right: 30px;
+        }
+        .download a.android_download{
+            background-image: url(../images/android.png);
+            background-size: 40px 40px;
+            background-position: 10px center;
+            padding-left: 60px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="fullpage">
+        <div  class="section section1">
+            <img class="icon_logo" width="" src="../images/icon.png" alt=""><br>
+            
+            <img src="../images/brand.png" alt="" class="brand">
+            <p class="desc">一个属于大学生的闲置物品交易社区</p>
+            
+            <button class="download_btn">点击下载</button>
+            <p class="download_detail">
+                支持iPhone/Android设备<br>
+                V3.0下载
+            </p>
+            <a href="#section2" class="slide_down"></a>
+        </div>
+        <div  class="section section2" >
+            <ul class="services">
+                <li class="service-item fl">
+                    <a class="active icon-service icon-service-sale" href="javascript:;"></a>
+                    <h2>出售</h2>
+                    <p>随手发布</p>
+                </li>
+                <li class="service-item ">
+                    <a class="icon-service icon-service-buy" href="javascript:;"></a>
+                    <h2>购买</h2>
+                    <p>随手获取</p>
+                </li>
+                <li class="service-item fr">
+                    <a class="icon-service icon-service-comty" href="javascript:;"></a>
+                    <h2>社区</h2>
+                    <p>随心交流</p>
+                </li>
+            </ul>
+            <div class="service-cons clearfix">
+                <div class="service-con clearfix">
+                    <h2>拍摄，描述，标价，上传</h2>
+                    <h3>一瞬灵感，即刻发布</h3>
+                    <div class="gifs">
+                        <img src="../images/sale_gif.gif" alt="">
+                        <!-- <img src="../images/a.jpg" alt=""> -->
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <div  class="section section3">
+            <div class="shop">
+                <h1 class="shop-title">宾至如归的线下体验店</h1>
+                <p class="shop-desc">让消费者亲身体验产品的零售终端实体</p>
+                <div class="shop-detail clearfix">
+                    <img style="width:" class="fl" src="../images/shop_1.png" alt="">
+                    <p class="fr">
+                    <img style="padding-right:10px;" src="../images/p_start.png" alt="">
+                        线下体验店不仅是向顾客展示新潮产品的站点，更是云格子铺团队的诚意体现。对于所有云格子铺官方商城自营商品，线下体验店都将提供相应的售后服务。
+                        除此之外，您可以云格子铺平台上所发布商品的同时，将其寄存在线下体验店，以吸引更多的用户关注。且线下体验店开设在校园生活区内，使同学们走出宿舍即可体验精彩的产品和周到的服务。
+                        <a href="./contact.html#o2omail">点击查看地址 >></a>
+                    </p>
+                    
+                </div>
+                <div class="shop-detail clearfix">
+                    <img class="fl" src="../images/shop_2.png" alt="">
+                    <img class="fl" src="../images/shop_3.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+        <div  class="section fp-auto-height section4">
+            <div class="spec trust">
+                <img src="../images/trust.png" alt="">
+                <div class="text">
+                    <p class=" title">信赖</p>
+                    <p class=" desc">源于坦诚，面对的都是同窗校友</p>
+                </div>
+                
+            </div>
+             <div class="spec value">
+                <img src="../images/value.png" alt="">
+                <div class="text">
+                    <p class=" title">超值</p>
+                    <p class=" desc">因为再生，旧手机可以抵换新机</p>
+                </div>
+               
+            </div>
+           
+            <div class="spec free">
+                <img src="../images/free.png" alt="">
+                <div class="text">
+                    <p class=" title">闲置</p>
+                    <p class=" desc">来自身边，想的到就能随时买卖</p>
+                </div>
+                
+            </div>
+        
+            
+
+        </div>
+
+        <div class="section  fp-auto-height section5">
+        
+        <div style="padding-top:32px;width:978px;height:0px;border-bottom:2px solid #fafafa;margin:auto;"></div>
+
+            
+        <div class="download clearfix">
+                <a class="download_qrcode">
+                    
+                </a>
+                <a target="_blank" class="ios_download" href="https://itunes.apple.com/cn/app/yun-ge-zi-pu-zhuan-zhu-xiao/id967927811?mt=8&ign-mpt=uo%3D4">
+                    下载iPhone版
+                </a>
+                <a href="http://app.uboxs.com/download_android.php" target="_blank" class="android_download">
+                    下载Android版
+                </a>
+            </div>
+       
+        <footer class="">
+                <div class="container">
+                    <div class="links clearfix">
+                <dl class="link-item">
+                    <dt>关于我们</dt>
+                    <dd><a href="./about.html#zaofeng">造风</a></dd>
+                    <dd><a href="./about.html#yungezipu">云格子铺</a></dd>
+                </dl>
+                <dl class="link-item">
+                    <dt>加入我们</dt>
+                    <dd><a href="./join.html#tech">技术</a></dd>
+                    <dd><a href="./join.html#pro">产品</a></dd>
+                    <dd><a href="./join.html#opera">运营</a></dd>
+                    <dd><a href="./join.html#mark">市场与营销</a></dd>
+                       
+                 
+                </dl>
+                <dl class="link-item">
+                    <dt>联系我们</dt>
+                    <dd><a href="./contact.html#hrmail">招聘邮箱</a></dd>
+                    <dd><a href="./contact.html#conmail">商务合作邮箱</a></dd>
+                    <dd><a href="./contact.html#o2omail">线下体验店</a></dd>
+                </dl>
+               
+                <dl class="link-item link-follow">
+                    <dt>关注我们</dt>
+                    <dd>
+                         <a class="weixin" href="javascript:;">
+                            <img class="qrcode_show" src="../images/qrcode_show.png" alt="云格子铺" />
+                        </a>
+                        <a class="weibo" target="_blank" href="http://weibo.com/yungezipu?refer_flag=1001030101"></a>
+                        
+                    </dd>
+                   
+                </dl>
+            </div>
+                    <p class="copyright">
+                        &copy;2014-2016&nbsp;&nbsp;Uboxs.com&nbsp;&nbsp;杭州造风电子商务有限公司 <br>
+                        浙ICP备 15002752号-2
+                    </p>
+                </div>
+
+                
+            </footer>
+    </div>
+    
+    </div>
+    
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+<script src="http://apps.bdimg.com/libs/jquery-fullPage/2.7.4/jquery.fullPage.js"></script>
+<script src="../js/jquery.fullPage.js"></script>
+<script src="../js/jquery.easings.min.js"></script>
+<script src="../js/move.js"></script>
+<script src="../js/common.js"></script>
+<script>
+     $(function(){
+        var time1=null;
+        var animFlag = true;
+        function autoClick(){
+            var intval = setInterval(function(){
+                var idx = $('.icon-service.active').closest('.service-item').index();
+                var clkIdx = (idx+1) % 3;
+                $('.icon-service').eq(clkIdx).click();
+            },4000)
+        }
+        function anim1(){
+            $('.service-cons .service-con h2').css('top','').css('opacity',.1);
+            $('.service-cons .service-con h3').css('top','').css('opacity',.1);
+            $('.service-cons .service-con h3').animate({opacity:1,top:'49%'},500);
+            $('.service-cons .service-con h2').animate({opacity:1,top:'38%'},500);
+            
+        }
+        $('.icon-service-sale').click(function(){
+            if($(this).is('.active')) return ;
+            $('.services li a').removeClass('active');
+            $(this).addClass('active')
+            $('.service-cons .service-con h2').text('搜索，发现，下单，获取');
+            $('.service-cons .service-con h3').text('坦诚信誉，无忧交易');
+            $('.gifs img').attr('src','../images/sale_gif.gif');
+            anim1();
+        });
+        $('.icon-service-buy').click(function(){
+            if($(this).is('.active')) return ;
+            $('.services li a').removeClass('active');
+            $(this).addClass('active')
+            $('.service-cons .service-con h2').text('搜索，发现，下单，获取');
+            $('.service-cons .service-con h3').text('坦诚信誉，无忧交易');
+            $('.gifs img').attr('src','../images/buy_gif.gif');
+            anim1();
+        });
+        $('.icon-service-comty').click(function(){
+            if($(this).is('.active')) return ;
+            $('.services li a').removeClass('active');
+            $(this).addClass('active')
+            $('.service-cons .service-con h2').text('兴趣，讨论，共享，交流');
+            $('.service-cons .service-con h3').text('认识彼此，真心交友');
+            $('.gifs img').attr('src','../images/comty_gif.gif');
+            anim1();
+        })
+        $('#fullpage').fullpage({
+            afterLoad:function(v,idx){
+                if(idx == 1){
+
+                    time1 = setInterval(function(){
+                        $('.slide_down').stop().animate({bottom:'92px'},490,function(){
+                            $('.slide_down').stop().animate({bottom:'64px'},490);
+                        });
+                    },1000);
+                    
+                }else if(idx ==2){
+                    move('.service-cons .service-con h2').set('top','38%').end();
+                    move('.service-cons .service-con h3').set('top','49%').end(); 
+                    if(animFlag){
+                        autoClick();
+                    }
+                    
+                }else if(idx == 3){
+                    
+                }else if(idx ==4){
+                    if(animFlag){
+                        animFlag = !animFlag;
+                        move('.spec.trust').set('opacity','1').end();
+                        move('.spec.trust img').set('left','90px').end();
+                        move('.spec.trust .text').set('right','120px').end(function(){
+                            move('.spec.value').set('opacity','1').end();
+                            move('.spec.value img').set('right','100px').end();
+                            move('.spec.value .text').set('left','125px').end(function(){
+                                move('.spec.free').set('opacity','1').end();
+                                move('.spec.free img').set('left','90px').end();
+                                move('.spec.free .text').set('right','120px').end();
+                            });
+                        });
+                        
+                        
+                        
+                    }
+                    
+                       
+                }
+            },
+            // css3:true,
+            anchors:['section1','section2','section3','section4','section5'],
+            scrollBar:true,
+            onLeave:function(index,nextIndex,direction){
+                if(index==1){
+                    clearInterval(time1);
+                }else if(index==2){
+                    move('.service-cons .service-con h2').set('top','33%').end();
+                    move('.service-cons .service-con h3').set('top','66%').end();
+                }else if(index ==4){
+                    /*setTimeout(function(){
+                        $('.spec img').css({'left':'','right':''});
+                        $('.spec .text').css({'left':'','right':''});
+                    },200)*/
+                    
+                }
+            }
+        });
+        $('.download_btn').click(function(){
+            if(animFlag){
+                animFlag = !animFlag;
+                move('.spec.trust').set('opacity','1').end();
+                move('.spec.trust img').set('left','90px').end();
+                move('.spec.trust .text').set('right','120px').end(function(){
+                    move('.spec.value').set('opacity','1').end();
+                    move('.spec.value img').set('right','100px').end();
+                    move('.spec.value .text').set('left','125px').end(function(){
+                        move('.spec.free').set('opacity','1').end();
+                        move('.spec.free img').set('left','90px').end();
+                        move('.spec.free .text').set('right','120px').end();
+                    });
+                });
+                
+                
+                
+            }
+            $.fn.fullpage.moveTo(5);
+            
+        })
+    })
+
+</script>
+</html>
