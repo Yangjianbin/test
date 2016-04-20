@@ -41,6 +41,7 @@
             letter-spacing: 24px;
             color: #eeeeee;
             font-size: 30px;
+            font-weight:normal;
         }
         .section1 .download_btn{
             margin-top: 90px;
@@ -495,7 +496,7 @@
                 var idx = $('.icon-service.active').closest('.service-item').index();
                 var clkIdx = (idx+1) % 3;
                 $('.icon-service').eq(clkIdx).click();
-            },4000)
+            },8000)
         }
         function anim1(){
             $('.service-cons .service-con h2').css('top','').css('opacity',.1);
