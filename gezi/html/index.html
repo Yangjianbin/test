@@ -66,7 +66,7 @@
             width:50px;
             background-image: url(../images/slide.png);
             position: absolute;
-            bottom: 64px;
+            bottom: 50px;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -535,10 +535,9 @@
         $('#fullpage').fullpage({
             afterLoad:function(v,idx){
                 if(idx == 1){
-
                     time1 = setInterval(function(){
-                        $('.slide_down').stop().animate({bottom:'92px'},490,function(){
-                            $('.slide_down').stop().animate({bottom:'64px'},490);
+                        $('.slide_down').stop().animate({bottom:'80px'},490,function(){
+                            $('.slide_down').stop().animate({bottom:'50px'},490);
                         });
                     },1000);
                     
